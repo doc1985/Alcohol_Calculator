@@ -1,36 +1,36 @@
 <div class="container-fluid">
-	<div class="row">
-		<div class="col-sm-offset-1 col-sm-offset-1 col-sm-2 col-xs-2" style="border: 1px solid black">
-			<form>
-			    <div class="form-group">
-			        <label for="drinkType">Drink Type</label>
-			        <input type="text" class="form-control" id="drinkType" placeholder="drinkType">
-			    </div>
-			    <div class="form-group">
-			        <label for="drinkType">Number of Drinkers</label>
-			        <input type="text" class="form-control" id="drinkType" placeholder="drinkType">
-			    </div>
-			    <div class="form-group">
-			        <label for="drinkType">Each Drink</label>
-			        <input type="text" class="form-control" id="drinkType" placeholder="drinkType">
-			    </div>
-			    <div class="form-group">
-			        <label for="drinkType">Drink Size</label>
-			        <select class="form-control">
-					  	<option>1</option>
-					</select>
-			    </div>
-			    <div class="form-group">
-			        <label for="drinkType">Price Per Package</label>
-			        <input type="text" class="form-control" id="drinkType" placeholder="drinkType">
-			    </div>
-			    <div class="form-group">
-			        <label for="drinkType">Package Size</label>
-			        <select class="form-control">
-					  	<option>1</option>
-					</select>
-			    </div>
-			</form>
-		</div>
-	</div>
+		<form>
+			<div class="col-sm-2 col-xs-2" style="border: 1px solid black" *ngFor="let drinkPackage of drinkPackages; let i=index">	
+				    <div class="form-group">
+				        <label for="drinkType">Drink Type</label>
+				        <input type="text" class="form-control" id="drinkType" placeholder="drinkType" [(ngModel)]="drinkPackage.drinkType" >
+				    </div>
+				    <div class="form-group">
+				        <label for="drinkType">Number of Drinkers</label>
+				        <input type="text" class="form-control" id="numberOfDrinkers" placeholder="Number of Drinkers" [(ngModel)]="drinkPackage.numberOfPeople">
+				    </div>
+				    <div class="form-group">
+				        <label for="drinkType">Each Drink</label>
+				        <input type="text" class="form-control" id="drinksPerPerson" placeholder="Drinks Per Person" [(ngModel)]="drinkPackage.drinksPerPerson">
+				    </div>
+				    <div class="form-group">
+				        <label for="drinkType">Drink Size</label>
+				        <select class="form-control">
+						  	<option>1</option>
+						</select>
+				    </div>
+				    <div class="form-group">
+				        <label for="drinkType">Price Per Unit</label>
+				        <input type="text" class="form-control" id="pricePerDrinkPackage" placeholder="Price Per Unit" [(ngModel)]="drinkPackage.pricePerDrinkPackage">
+				    </div>
+				    <div class="form-group">
+				        <label for="drinkType">Package Size</label>
+				        <select class="form-control">
+						  	<option>1</option>
+						</select>
+				    </div>		
+				<button (click)="logit()"> press me </button>
+			</div>
+		
+		</form>
 </div>
