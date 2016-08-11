@@ -21,7 +21,13 @@ export class HomeComponent implements OnInit{
 
 	ngOnInit(){
 		this.getDrinkPackages();
-		console.log(this.drinkPackages);
+		this.calculateTotals();
+	}
+
+	calculateTotals(){
+		for(let drinkPackage of this.drinkPackages){
+			drinkPackage.unitsNeeded = drinkPackage.drinksPerPerson * 2
+		}
 	}
 
 	logit() {

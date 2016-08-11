@@ -8,38 +8,20 @@ export class DrinkPackage {
   pricePerDrinkPackage: number;
   drinkSize: DrinkSize;
   packageSize: DrinkSize;
+  packageCost: number;
+  unitsNeeded: number;
 
   constructor(drinkType: string, numberOfPeople: number, drinksPersPerson: number, 
-  	pricePerDrinkPackage: number, drinkSize: DrinkSize, packageSize: DrinkSize) {
+  	pricePerDrinkPackage: number, drinkSize: DrinkSize, packageSize: DrinkSize, packageCost: number, 
+    unitsNeeded: number) {
   	this.drinkType = drinkType;
   	this.numberOfPeople = numberOfPeople;
   	this.drinksPerPerson = drinksPersPerson;
   	this.pricePerDrinkPackage = pricePerDrinkPackage;
   	this.drinkSize = drinkSize;
   	this.packageSize = packageSize;
+    this.packageCost = packageCost;
+    this.unitsNeeded = unitsNeeded;
   }
 
-  getDrinkType() {
-  	return this.drinkType;
-  }
-
-  getNumberOfPeople() {
-  	return this.numberOfPeople;
-  }
-
-  getDrinksPerPerson() {
-  	return this.drinksPerPerson;
-  }
-
-  getPricePerDrinkPackage() {
-  	return this.pricePerDrinkPackage;
-  }
-
-  getDrinkSize() {
-  	return this.drinkSize;
-  }
-
-  getPackageSize() {
-  	return this.packageSize;
-  }
 }
